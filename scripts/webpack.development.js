@@ -20,7 +20,7 @@ const sass = {
   }, {
     loader: 'sass-loader',
   }],
-}
+};
 
 const config = {
   devServer: {

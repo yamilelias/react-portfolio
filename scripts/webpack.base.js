@@ -1,9 +1,8 @@
-const webpack = require("webpack");
+const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const keys = require('lodash/keys');
 const entry = require('./webpack.entry.js');
 
 const babelrc = fs.readFileSync(path.join(__dirname, '..', '.babelrc')).toString();
@@ -11,15 +10,15 @@ const babelrc = fs.readFileSync(path.join(__dirname, '..', '.babelrc')).toString
 const base = (env) => {
   const envs = ['production', 'homologation', 'test', 'development'];
   if (envs.indexOf(env) === -1) {
-    throw new Error(`env '${env}' não suportado`);
+    throw new Error(`env '${env}' not supported`);
   }
 
-  const config = {
+  return {
     entry,
     output: {
-      filename: 'js/[name].js',
+      filename: 'js/index.js',
       path: path.join(__dirname, '..', 'release'),
-      // publicPath: '/',
+      publicPath: '/',
     },
     resolve: {
       extensions: ['.js', '.jsx', '.json'],
@@ -37,8 +36,14 @@ const base = (env) => {
       ]),
       new webpack.DefinePlugin({
         'process.env': {
-          'NODE_ENV': JSON.stringify(env === 'development' ? 'development' : 'production'),
+          NODE_ENV: JSON.stringify(env === 'development' ? 'development' : 'production'),
         },
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/html/index.ejs',
+        production: env === 'production',
+        filename: 'index.html',
+        inject: true,
       }),
     ],
     module: {
@@ -71,19 +76,6 @@ const base = (env) => {
       ],
     },
   };
-
-  const chunks = keys(entry);
-  for (let i in chunks) {
-    config.plugins.push(new HtmlWebpackPlugin({
-      template: './src/html/index.ejs',
-      production: env === 'production',
-      filename: chunks[i] + '.html',
-      chunks: [chunks[i], 'modules'],
-      inject: true,
-    }));
-  }
-
-  return config;
 };
 
 module.exports = base;
