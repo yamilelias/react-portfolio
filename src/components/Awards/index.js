@@ -3,7 +3,7 @@ import Section from '../Shared/Section';
 
 const Awards = () => {
   return (
-    <Section>
+    <Section id="awards">
       <Section.Header text="Awards &amp; Certifications"/>
       <ul className="fa-ul mb-0">
         <li>

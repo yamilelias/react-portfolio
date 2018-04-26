@@ -3,7 +3,7 @@ import Section from '../Shared/Section';
 
 const Interests = () => {
   return (
-    <Section>
+    <Section id="interests">
       <Section.Header text="Interests"/>
       <p>Apart from being a web developer, I enjoy most of my time being
         outdoors. In the winter, I am an avid skiier and novice ice
