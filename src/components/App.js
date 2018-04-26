@@ -1,107 +1,15 @@
 import React, { Component } from 'react';
+import Nav from './Nav';
+import About from './About';
 
 class App extends Component {
   render() {
     return (
       <div id="page-top">
-        <nav
-          className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
-          id="sideNav">
-          <a className="navbar-brand js-scroll-trigger" href="#page-top">
-            <span className="d-block d-lg-none">Start Bootstrap</span>
-            <span className="d-none d-lg-block">
-              <img className="img-fluid img-profile rounded-circle mx-auto mb-2"
-                   src="../src/static/img/profile.jpg" alt=""/>
-            </span>
-          </a>
-          <button className="navbar-toggler" type="button"
-                  data-toggle="collapse" data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent" aria-expanded="false"
-                  aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger"
-                   href="#about">About</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger"
-                   href="#experience">Experience</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger"
-                   href="#education">Education</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger"
-                   href="#skills">Skills</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger"
-                   href="#interests">Interests</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger"
-                   href="#awards">Awards</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <Nav/>
 
         <div className="container-fluid p-0">
-          <section className="resume-section p-3 p-lg-5 d-flex d-column"
-                   id="about">
-            <div className="my-auto">
-              <h1 className="mb-0">Clarence
-                <span className="text-primary">Taylor</span>
-              </h1>
-              <div className="subheading mb-5">3542 Berry Street · Cheyenne
-                Wells, CO 80810 · (317) 585-8468 ·
-                <a href="mailto:name@email.com">name@email.com</a>
-              </div>
-              <p className="mb-5">I am experienced in leveraging agile
-                frameworks to provide a robust synopsis for high level
-                overviews. Iterative approaches to corporate strategy foster
-                collaborative thinking to further the overall value
-                proposition.</p>
-              <ul className="list-inline list-social-icons mb-0">
-                <li className="list-inline-item">
-                  <a href="#">
-                <span className="fa-stack fa-lg">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a href="#">
-                <span className="fa-stack fa-lg">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a href="#">
-                <span className="fa-stack fa-lg">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a href="#">
-                <span className="fa-stack fa-lg">
-                  <i className="fa fa-circle fa-stack-2x"></i>
-                  <i className="fab fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </section>
+          <About/>
 
           <section className="resume-section p-3 p-lg-5 d-flex flex-column"
                    id="experience">
