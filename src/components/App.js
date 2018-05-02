@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+
 import Nav from './Nav';
 import About from './About';
 import Experience from './Experience';
@@ -7,22 +9,26 @@ import Skills from './Skills';
 import Interests from './Interests';
 import Awards from './Awards';
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <Router>
       <div id="page-top">
         <Nav/>
         <div className="container-fluid p-0">
-          <About/>
-          <Experience/>
-          <Education/>
-          <Skills/>
-          <Interests/>
-          <Awards/>
+          <Switch>
+            <Route exact path="/" component={About}/>
+            <Route exact path="/about" component={About}/>
+            <Route exact path="/experience" component={Experience}/>
+            <Route exact path="/education" component={Education}/>
+            <Route exact path="/skills" component={Skills}/>
+            <Route exact path="/interests" component={Interests}/>
+            <Route exact path="/awards" component={Awards}/>
+            <Route path="*" render={() => (<Redirect to="/"/>)}/>
+          </Switch>
         </div>
       </div>
-    );
-  }
-}
+    </Router>
+  );
+};
 
 export default App;
