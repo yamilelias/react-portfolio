@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SocialIcon from './SocialIcon';
+import Social from '../Shared/Icons/Social';
 import Section from '../Shared/Section';
 
 const About = () => {
@@ -20,10 +20,10 @@ const About = () => {
           collaborative thinking to further the overall value
           proposition.</p>
         <ul className="list-inline list-social-icons mb-0">
-          <SocialIcon icon="twitter"/>
-          <SocialIcon icon="linkedin"/>
-          <SocialIcon icon="github"/>
-          <SocialIcon icon="stack-overflow"/>
+          <Social icon="twitter"/>
+          <Social icon="linkedin"/>
+          <Social icon="github"/>
+          <Social icon="stack-overflow"/>
         </ul>
       </div>
     </Section>

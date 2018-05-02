@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SocialIcon = (props) => {
+const Social = (props) => {
   return (
     <li className="list-inline-item">
       <a href={`${props.href}`}>
@@ -14,13 +14,13 @@ const SocialIcon = (props) => {
   );
 };
 
-SocialIcon.propTypes = {
+Social.propTypes = {
   icon: PropTypes.string,
   href: PropTypes.string,
 };
 
-SocialIcon.defaultPropTypes = {
+Social.defaultPropTypes = {
   href: '#',
 };
 
-export default SocialIcon;
+export default Social;
