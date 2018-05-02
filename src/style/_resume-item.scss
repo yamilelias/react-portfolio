@@ -26,3 +26,9 @@ section.resume-section {
     padding-bottom: 3rem !important;
   }
 }
+@media (max-width: 768px) {
+  section.resume-section {
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+  }
+}

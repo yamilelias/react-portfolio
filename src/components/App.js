@@ -12,7 +12,7 @@ import Awards from './Awards';
 const App = () => {
   return (
     <Router>
-      <div id="page-top">
+      <div>
         <Nav/>
         <div className="container-fluid p-0">
           <Switch>
