@@ -17,12 +17,12 @@ const App = () => {
         <div className="container-fluid p-0">
           <Switch>
             <Route exact path="/" component={About}/>
-            <Route exact path="/about" component={About}/>
-            <Route exact path="/experience" component={Experience}/>
-            <Route exact path="/education" component={Education}/>
-            <Route exact path="/skills" component={Skills}/>
-            <Route exact path="/interests" component={Interests}/>
-            <Route exact path="/awards" component={Awards}/>
+            <Route path="/about" render={() => (<Redirect to="/"/>)}/>
+            <Route path="/experience" component={Experience}/>
+            <Route path="/education" component={Education}/>
+            <Route path="/skills" component={Skills}/>
+            <Route path="/interests" component={Interests}/>
+            <Route path="/awards" component={Awards}/>
             <Route path="*" render={() => (<Redirect to="/"/>)}/>
           </Switch>
         </div>
