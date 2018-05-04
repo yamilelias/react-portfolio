@@ -8,7 +8,7 @@ const Nav = () => {
       className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
       id="sideNav">
       <NavLink to="/" className="navbar-brand js-scroll-trigger">
-        <span className="d-block d-lg-none">Start Bootstrap</span>
+        <span className="d-block d-lg-none">Yamil Elías</span>
         <span className="d-none d-lg-block">
             <img className="img-fluid img-profile rounded-circle mx-auto mb-2"
                  src="../src/static/img/profile.jpg" alt=""/>
@@ -27,7 +27,7 @@ const Nav = () => {
           <Link name="Education"/>
           <Link name="Skills"/>
           <Link name="Interests"/>
-          <Link name="Awards"/>
+          <Link name="Certifications"/>
         </ul>
       </div>
     </nav>

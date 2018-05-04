@@ -7,7 +7,7 @@ import Experience from './Experience';
 import Education from './Education';
 import Skills from './Skills';
 import Interests from './Interests';
-import Awards from './Awards';
+import Certifications from './Certifications';
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
             <Route path="/education" component={Education}/>
             <Route path="/skills" component={Skills}/>
             <Route path="/interests" component={Interests}/>
-            <Route path="/awards" component={Awards}/>
+            <Route path="/certifications" component={Certifications}/>
             <Route path="*" render={() => (<Redirect to="/"/>)}/>
           </Switch>
         </div>

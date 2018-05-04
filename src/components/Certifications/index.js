@@ -1,10 +1,10 @@
 import React from 'react';
 import Section from '../Shared/Section';
 
-const Awards = () => {
+const Certifications = () => {
   return (
-    <Section id="awards">
-      <Section.Header text="Awards &amp; Certifications"/>
+    <Section id="certifications">
+      <Section.Header text="Certifications &amp; Trainings"/>
       <ul className="fa-ul mb-0">
         <li>
           <i className="fa-li fa fa-trophy text-warning"></i>
@@ -47,4 +47,4 @@ const Awards = () => {
   );
 };
 
-export default Awards;
+export default Certifications;
