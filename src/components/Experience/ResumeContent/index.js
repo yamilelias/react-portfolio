@@ -7,7 +7,7 @@ const ResumeContent = (props) => {
       <div className="resume-content mr-auto">
         <h3 className="mb-0">{props.title}</h3>
         <div className="subheading mb-3">{props.company}</div>
-        <p>{props.children}</p>
+        {props.children}
       </div>
       <div className="resume-date text-md-right">
         <span className="text-primary">{props.date}</span>
