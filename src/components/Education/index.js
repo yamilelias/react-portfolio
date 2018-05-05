@@ -4,28 +4,19 @@ import Section from '../Shared/Section';
 const Education = () => {
   return (
     <Section id="education">
-      <Section.Header text="Education"/>
-      <div className="resume-item d-flex flex-column flex-md-row mb-5">
-        <div className="resume-content mr-auto">
-          <h3 className="mb-0">University of Colorado Boulder</h3>
-          <div className="subheading mb-3">Bachelor of Science</div>
-          <div>Computer Science - Web Development Track</div>
-          <p>GPA: 3.23</p>
-        </div>
-        <div className="resume-date text-md-right">
-          <span className="text-primary">August 2006 - May 2010</span>
-        </div>
-      </div>
-
-      <div className="resume-item d-flex flex-column flex-md-row">
-        <div className="resume-content mr-auto">
-          <h3 className="mb-0">James Buchanan High School</h3>
-          <div className="subheading mb-3">Technology Magnet Program
+      <div>
+        <Section.Header text="Education"/>
+        <div className="resume-item d-flex flex-column flex-md-row mb-5">
+          <div className="resume-logo pr-2">
+            <img className="logo" src="../src/static/img/tec_monterrey.svg" alt=""/>
           </div>
-          <p>GPA: 3.56</p>
-        </div>
-        <div className="resume-date text-md-right">
-          <span className="text-primary">August 2002 - May 2006</span>
+          <div className="resume-content">
+            <h3 className="mb-0">Technology Institute of Monterrey</h3>
+            <div className="subheading mb-3">Bachelor in Information Technologies</div>
+          </div>
+          <div className="resume-date text-md-right">
+            <span className="text-primary">August 2013 - Dic 2017</span>
+          </div>
         </div>
       </div>
     </Section>
