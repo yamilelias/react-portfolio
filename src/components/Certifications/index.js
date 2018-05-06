@@ -6,33 +6,40 @@ const Certifications = () => {
     <Section id="certifications">
       <div>
         <Section.Header text="Certifications &amp; Trainings"/>
-        <ul className="fa-ul mb-0">
-          <li>
-            <i className="fa-li fa fa-trophy text-warning"></i>
-            Ruby on Rails - Online Course
-            <span>Dale hopkins University</span>
-          </li>
-          <li>
-            <i className="fa-li fa fa-trophy text-warning"></i>
-            Cryptography - Online Course
-            <span>Stanford University</span>
-          </li>
-          <li>
-            <i className="fa-li fa fa-trophy text-warning"></i>
-            Responsive Web Design - Online Course
-            <span>University of London</span>
-          </li>
-          <li>
-            <i className="fa-li fa fa-trophy text-warning"></i>
-            Angular Bootcamp - Training Camp
-            <span>Gamma Partners</span>
-          </li>
-          <li>
-            <i className="fa-li fa fa-trophy text-warning"></i>
-            Amazon Web Services Core Essentials - In Progress
-            <span>Amazon Training and Certification</span>
-          </li>
-        </ul>
+        <div className="small-section">
+          <div className="left">
+            <ul className="fa-ul mb-0 list-group">
+              <li>
+                <i className="fa-li fa fa-chevron-right text-warning"></i>
+                <strong>Ruby on Rails</strong> - Online Course
+                <span>Dale Hopkins University</span>
+              </li>
+              <li>
+                <i className="fa-li fa fa-chevron-right text-warning"></i>
+                <strong>Cryptography</strong> - Online Course
+                <span>Stanford University</span>
+              </li>
+              <li>
+                <i className="fa-li fa fa-chevron-right text-warning"></i>
+                <strong>Responsive Web Design</strong> - Online Course
+                <span>University of London</span>
+              </li>
+              <li>
+                <i className="fa-li fa fa-chevron-right text-warning"></i>
+                <strong>Angular Bootcamp</strong> - Training Camp
+                <span>Gamma Partners</span>
+              </li>
+              <li>
+                <i className="fa-li fa fa-chevron-right text-warning"></i>
+                <strong>Amazon Web Services Core Essentials</strong> - In Progress
+                <span>Amazon Training and Certification</span>
+              </li>
+            </ul>
+          </div>
+          <div className="right show">
+            <img src="../src/static/img/certificate.png" alt=""/>
+          </div>
+        </div>
       </div>
     </Section>
   );

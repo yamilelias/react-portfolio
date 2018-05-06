@@ -5,11 +5,8 @@ import Header from './Header';
 
 const Section = (props) => {
   return (
-    <section className="resume-section p-3 p-lg-5 d-flex d-column"
-             id={props.id}>
-      <div className="my-auto">
-        {props.children}
-      </div>
+    <section className="resume-section p-3 p-lg-5 d-flex d-column" id={props.id}>
+      {props.children}
     </section>
   );
 };

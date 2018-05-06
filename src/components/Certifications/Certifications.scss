@@ -1,0 +1,23 @@
+#certifications {
+  .list-group {
+    span {
+      display: inherit;
+      margin-left: 15px;
+      font-style: italic;
+    }
+  }
+
+  .left {
+    margin-right: 10em;
+  }
+
+  .show {
+    img {
+      top: 0;
+      position: absolute;
+      width: 300px;
+      padding-top: 8em;
+    }
+    display: contents;
+  }
+}
