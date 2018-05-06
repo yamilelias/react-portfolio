@@ -62,13 +62,16 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "@amcharts/amcharts3-react": "^3.1.0",
+    "amcharts3": "^3.21.12",
+    "ammap3": "^3.21.12",
     "lodash": "^4.17.5",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },

@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '../Shared/Section';
 import DevList from './DevList';
+// import DevChart from './DevChart';
 
 const Skills = () => {
   return (
@@ -41,6 +42,10 @@ const Skills = () => {
             Agile Development &amp; Scrum
           </li>
         </ul>
+
+        <div className="small-section">
+          {/* <DevChart/> */}
+        </div>
       </div>
     </Section>
   );
