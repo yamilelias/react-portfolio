@@ -25,7 +25,7 @@ class Experience extends React.Component {
       return (
         <div key={item.id} className="experience-element">
           <div className="company-logo">
-            <img src="../src/static/img/logos/tec_monterrey.svg" alt=""/>
+            <img src={item.img} alt=""/>
           </div>
           <ResumeContent
             title={item.title}

@@ -34,6 +34,7 @@ export function fetchExperience(experience = 'experience') {
           company: items[item].company,
           date: items[item].date,
           description: items [item].description,
+          img: items[item].img,
         });
       }
       /* eslint-enable */
