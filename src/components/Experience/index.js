@@ -1,45 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Section from '../Shared/Section';
+import Loader from '../Shared/Icons/Loader';
 import ResumeContent from './ResumeContent';
-import { fireapp } from '../../helpers/firebase';
 
 class Experience extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      experience: [],
+      history: this.props.history,
     };
 
     this.renderExperience = this.renderExperience.bind(this);
   }
 
   componentDidMount() {
-    const experienceRef = fireapp.database().ref('experience');
-
-    experienceRef.on('value', (snapshot) => {
-      const items = snapshot.val();
-      const newState = [];
-      /* eslint-disable */
-      for (const item in items) {
-        newState.push({
-          id: item,
-          title: items[ item ].title,
-          company: items[ item ].company,
-          date: items[ item ].date,
-        });
-      }
-      /* eslint-enable */
-
-      this.setState({
-        experience: newState,
-      });
-    });
+    this.props.fetchExperience('experience');
   }
 
   renderExperience() {
-    return this.state.experience.reverse().map((item) => {
+    return this.props.history.map((item) => {
       return (
         <ResumeContent
           key={item.id}
@@ -59,13 +41,27 @@ class Experience extends React.Component {
   render() {
     return (
       <Section id="experience">
-        <div>
-          <Section.Header text="Experience"/>
-          {this.renderExperience()}
-        </div>
+        {(this.props.isFetching) ? (
+          <div className="loader"><Loader/></div>
+        ) : (
+          <div>
+            <Section.Header text="Experience"/>
+            {this.renderExperience()}
+          </div>
+        )}
       </Section>
     );
   }
 }
+Experience.propTypes = {
+  fetchExperience: PropTypes.func.isRequired,
+  history: PropTypes.array.isRequired,
+  isFetching: PropTypes.bool,
+};
+
+Experience.defaultProps = {
+  history: [],
+  isFetching: false,
+};
 
 export default Experience;

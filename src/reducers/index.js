@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({});
+import experience from './experience';
+
+const rootReducer = combineReducers({
+  experience,
+});
 
 export default rootReducer;
