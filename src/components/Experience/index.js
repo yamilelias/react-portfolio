@@ -1,56 +1,71 @@
 import React from 'react';
+
 import Section from '../Shared/Section';
 import ResumeContent from './ResumeContent';
+import { fireapp } from '../../helpers/firebase';
 
-const Experience = () => {
-  return (
-    <Section id="experience">
-      <div>
-        <Section.Header text="Experience"/>
+class Experience extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      experience: [],
+    };
+
+    this.renderExperience = this.renderExperience.bind(this);
+  }
+
+  componentDidMount() {
+    const experienceRef = fireapp.database().ref('experience');
+
+    experienceRef.on('value', (snapshot) => {
+      const items = snapshot.val();
+      const newState = [];
+      /* eslint-disable */
+      for (const item in items) {
+        newState.push({
+          id: item,
+          title: items[ item ].title,
+          company: items[ item ].company,
+          date: items[ item ].date,
+        });
+      }
+      /* eslint-enable */
+
+      this.setState({
+        experience: newState,
+      });
+    });
+  }
+
+  renderExperience() {
+    return this.state.experience.reverse().map((item) => {
+      return (
         <ResumeContent
-          title="Senior Web Developer"
-          company="Intelitec Solutions"
-          date="March 2013 - Present">
-          <p>Bring to the table win-win survival strategies to ensure
-            proactive domination. At the end of the day, going forward,
-            a new normal that has evolved from generation X is on the
-            runway heading towards a streamlined cloud solution. User
-            generated content in real-time will have multiple
-            touchpoints for offshoring.</p>
+          key={item.id}
+          title={item.title}
+          company={item.company}
+          date={item.date}>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+            ullamcorper scelerisque metus. Pellentesque gravida ante in magna
+            gravida iaculis. Aenean dapibus ipsum nulla, quis porttitor quam
+            auctor vitae. In convallis, libero sed lobortis finibus, sapien justo
+            fringilla odio, quis rutrum lacus ex interdum lacus.</p>
         </ResumeContent>
-        <ResumeContent
-          title="Web Developer"
-          company="Intelitec Solutions"
-          date="December 2011 - March 2013">
-          <p>Capitalize on low hanging fruit to identify a ballpark
-            value added activity to beta test. Override the digital
-            divide with additional clickthroughs from DevOps.
-            Nanotechnology immersion along the information highway will
-            close the loop on focusing solely on the bottom line.</p>
-        </ResumeContent>
-        <ResumeContent
-          title="Junior Web Designer"
-          company="Shout! Media Productions"
-          date="July 2010 - December 2011">
-          <p>Podcasting operational change management inside of
-            workflows to establish a framework. Taking seamless key
-            performance indicators offline to maximise the long tail.
-            Keeping your eye on the ball while performing a deep dive on
-            the start-up mentality to derive convergence on
-            cross-platform integration.</p>
-        </ResumeContent>
-        <ResumeContent
-          title="Web Design Intern"
-          company="Shout! Media Productions"
-          date="September 2008 - June 2010">
-          <p>Collaboratively administrate empowered markets via
-            plug-and-play networks. Dynamically procrastinate B2C users
-            after installed base benefits. Dramatically visualize
-            customer directed convergence without revolutionary ROI.</p>
-        </ResumeContent>
-      </div>
-    </Section>
-  );
-};
+      );
+    });
+  }
+
+  render() {
+    return (
+      <Section id="experience">
+        <div>
+          <Section.Header text="Experience"/>
+          {this.renderExperience()}
+        </div>
+      </Section>
+    );
+  }
+}
 
 export default Experience;
