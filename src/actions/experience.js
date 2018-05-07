@@ -30,9 +30,10 @@ export function fetchExperience(experience = 'experience') {
       for (const item in items) {
         data.push({
           id: item,
-          title: items[ item ].title,
-          company: items[ item ].company,
-          date: items[ item ].date,
+          title: items[item].title,
+          company: items[item].company,
+          date: items[item].date,
+          description: items [item].description,
         });
       }
       /* eslint-enable */

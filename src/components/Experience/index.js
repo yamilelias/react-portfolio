@@ -28,11 +28,7 @@ class Experience extends React.Component {
           title={item.title}
           company={item.company}
           date={item.date}>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            ullamcorper scelerisque metus. Pellentesque gravida ante in magna
-            gravida iaculis. Aenean dapibus ipsum nulla, quis porttitor quam
-            auctor vitae. In convallis, libero sed lobortis finibus, sapien justo
-            fringilla odio, quis rutrum lacus ex interdum lacus.</p>
+          <p>{item.description}</p>
         </ResumeContent>
       );
     });
