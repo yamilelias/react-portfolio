@@ -7,7 +7,7 @@ import Nav from './Nav';
 import About from './About';
 import Experience from '../containers/ExperienceContainer';
 import Education from './Education';
-import Skills from './Skills';
+import Skills from '../containers/SkillsContainer';
 import Interests from './Interests';
 import Certifications from './Certifications';
 

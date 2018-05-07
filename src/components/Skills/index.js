@@ -1,54 +1,49 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Section from '../Shared/Section';
+import DevChart from './DevChart';
 import DevList from './DevList';
-// import DevChart from './DevChart';
+import Loader from '../Shared/Icons/Loader';
 
-const Skills = () => {
+const Skills = (props) => {
   return (
     <Section id="skills">
-      <div>
-        <Section.Header text="Skills"/>
-        <div className="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul className="list-inline list-icons">
-          <DevList icon="html5"/>
-          <DevList icon="css3"/>
-          <DevList icon="js"/>
-          <DevList icon="jquery"/>
-          <DevList icon="sass"/>
-          <DevList icon="less"/>
-          <DevList icon="bootstrap"/>
-          <DevList icon="wordpress"/>
-          <DevList icon="grunt"/>
-          <DevList icon="gulp"/>
-          <DevList icon="npm"/>
-        </ul>
-
-        <div className="subheading mb-3">Workflow</div>
-        <ul className="fa-ul mb-0">
-          <li>
-            <i className="fa-li fa fa-check"></i>
-            Mobile-First, Responsive Design
-          </li>
-          <li>
-            <i className="fa-li fa fa-check"></i>
-            Cross Browser Testing &amp; Debugging
-          </li>
-          <li>
-            <i className="fa-li fa fa-check"></i>
-            Cross Functional Teams
-          </li>
-          <li>
-            <i className="fa-li fa fa-check"></i>
-            Agile Development &amp; Scrum
-          </li>
-        </ul>
-
-        <div className="small-section">
-          {/* <DevChart/> */}
+      {(props.isFetching) ? (
+        <div className="loader"><Loader/></div>
+      ) : (
+        <div className="charts">
+          <Section.Header text="Skills"/>
+          <p className="mb-5">This are some of the programming languages and frameworks I know
+            (Academically of Work-related I used).</p>
+          <div className="small-section">
+            <div className="subheading mb-3">Programming Languages</div>
+            <DevChart
+              isFetching={props.isFetching}
+              data={props.data}
+              fetchSkills={props.fetchSkills}
+            />
+          </div>
+          <div className="small-section">
+            <div className="subheading">Frameworks</div>
+            <ul className="list-inline list-icons">
+              <DevList icon="react"/>
+              <DevList icon="angular"/>
+              <DevList icon="wordpress"/>
+              <DevList icon="grunt"/>
+              <DevList icon="gulp"/>
+              <DevList icon="npm"/>
+            </ul>
+          </div>
         </div>
-      </div>
+      )}
     </Section>
   );
+};
+
+Skills.propTypes = {
+  isFetching: PropTypes.bool.isRequired,
+  data: PropTypes.array.isRequired,
+  fetchSkills: PropTypes.func.isRequired,
 };
 
 export default Skills;
