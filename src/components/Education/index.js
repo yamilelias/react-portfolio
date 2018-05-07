@@ -8,7 +8,7 @@ const Education = () => {
         <Section.Header text="Education"/>
         <div className="resume-item d-flex flex-column flex-md-row mb-5">
           <div className="resume-logo pr-3">
-            <img className="logo" src="../src/static/img/tec_monterrey.svg" alt=""/>
+            <img className="logo" src="../src/static/img/logos/tec_monterrey.svg" alt=""/>
           </div>
           <div className="resume-content">
             <h3 className="mb-0">Technology Institute of Monterrey</h3>

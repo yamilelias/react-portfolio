@@ -23,13 +23,17 @@ class Experience extends React.Component {
   renderExperience() {
     return this.props.history.map((item) => {
       return (
-        <ResumeContent
-          key={item.id}
-          title={item.title}
-          company={item.company}
-          date={item.date}>
-          <p>{item.description}</p>
-        </ResumeContent>
+        <div key={item.id} className="experience-element">
+          <div className="company-logo">
+            <img src="../src/static/img/logos/tec_monterrey.svg" alt=""/>
+          </div>
+          <ResumeContent
+            title={item.title}
+            company={item.company}
+            date={item.date}>
+            <p>{item.description}</p>
+          </ResumeContent>
+        </div>
       );
     });
   }

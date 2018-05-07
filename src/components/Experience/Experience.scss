@@ -1,0 +1,22 @@
+#experience {
+  .experience-element {
+    display: flex;
+    .company-logo {
+      float: left;
+      margin-right: 15px;
+      img {
+        width: 50px;
+      }
+    }
+
+    .resume-item {
+      float: right;
+
+      .resume-content {
+        p {
+          margin-left: -60px;
+        }
+      }
+    }
+  }
+}

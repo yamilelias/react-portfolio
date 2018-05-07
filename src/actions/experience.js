@@ -38,7 +38,7 @@ export function fetchExperience(experience = 'experience') {
       }
       /* eslint-enable */
 
-      dispatch(receiveExperience(data));
+      dispatch(receiveExperience(data.reverse()));
     });
   };
 }
