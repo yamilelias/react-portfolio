@@ -1,5 +1,27 @@
 #interests {
-  #mapchart{
+  .container {
+    .set-right {
+      float: right;
+      text-align: right;
+    }
+
+    .center-vertical {
+      position: relative;
+
+      p {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%)
+      }
+    }
+
+    img {
+      align-content: center;
+      border: 10px $primary solid;
+    }
+  }
+
+  #mapchart {
     width: 100%;
     height: 500px;
 
