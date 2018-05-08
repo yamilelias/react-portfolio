@@ -38,7 +38,7 @@ export function fetchSkills(query = 'skills') {
       }
       /* eslint-enable */
 
-      dispatch(receiveSkills(data.reverse()));
+      dispatch(receiveSkills(data));
     });
   };
 }

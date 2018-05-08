@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Section from '../Shared/Section';
 import DevChart from './DevChart';
-import DevList from './DevList';
+import DevCard from './DevCard';
 import Loader from '../Shared/Icons/Loader';
 
 const Skills = (props) => {
@@ -23,16 +23,14 @@ const Skills = (props) => {
               fetchSkills={props.fetchSkills}
             />
           </div>
-          <div className="small-section">
-            <div className="subheading">Frameworks</div>
-            <ul className="list-inline list-icons">
-              <DevList icon="react"/>
-              <DevList icon="angular"/>
-              <DevList icon="wordpress"/>
-              <DevList icon="grunt"/>
-              <DevList icon="gulp"/>
-              <DevList icon="npm"/>
-            </ul>
+          <div className="small-section frameworks">
+            <div className="subheading mb-3">Frameworks</div>
+            <div className="row">
+              <DevCard icon="react" title="React"/>
+              <DevCard icon="angular" title="AngularJS" style="bg-danger"/>
+              <DevCard icon="wordpress" title="WordPress" style="bg-info"/>
+              <DevCard icon="laravel" title="Laravel" style="bg-dark"/>
+            </div>
           </div>
         </div>
       )}

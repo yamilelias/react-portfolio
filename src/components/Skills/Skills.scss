@@ -3,11 +3,6 @@
     .small-section {
       display: grid;
 
-      .list-icons {
-        .list-inline-item {
-        }
-      }
-
       #chartdiv{
         width: 1000px;
         height: 500px;
@@ -15,6 +10,12 @@
         a {
           display: none !important;
         }
+      }
+    }
+
+    .frameworks {
+      i {
+        font-size: 50px;
       }
     }
   }
