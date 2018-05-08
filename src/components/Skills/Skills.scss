@@ -14,8 +14,15 @@
     }
 
     .frameworks {
-      i {
-        font-size: 50px;
+      .card {
+        &:hover {
+          box-shadow: #808080 5px 5px 15px;
+          margin-top: -5px;
+        }
+
+        i {
+          font-size: 50px;
+        }
       }
     }
   }
