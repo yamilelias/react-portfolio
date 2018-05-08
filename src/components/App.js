@@ -8,7 +8,7 @@ import About from './About';
 import Experience from '../containers/ExperienceContainer';
 import Education from './Education';
 import Skills from '../containers/SkillsContainer';
-import Interests from './Interests';
+import Interests from '../containers/InterestsContainer';
 import Certifications from './Certifications';
 
 const App = (props) => {
