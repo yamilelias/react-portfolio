@@ -11,7 +11,7 @@ const Nav = () => {
         <span className="d-block d-lg-none">Yamil Elías</span>
         <span className="d-none d-lg-block">
             <img className="img-fluid img-profile rounded-circle mx-auto mb-2"
-                 src="../src/static/img/profile.jpg" alt=""/>
+                 src="../src/static/img/me/profile.jpg" alt=""/>
           </span>
       </NavLink>
       <button className="navbar-toggler" type="button"
