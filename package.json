@@ -31,6 +31,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "bootstrap-sass": "3.3.7",
     "chai": "^4.1.2",
+    "cross-env": "^5.1.5",
     "css-hot-loader": "^1.3.9",
     "css-loader": "^0.28.10",
     "enzyme": "^3.3.0",
@@ -74,11 +75,10 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
     "dev": "webpack-dev-server --mode development --config development.js --hot --colors --open",
-    "build": "react-scripts build",
-    "build:webpack": "webpack -p --env.production --mode production --config build.js --colors",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production webpack -p --config build.js --colors",
+    "build:production": "webpack -p --env.production --mode production --config build.js --colors",
+    "build:test": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=test webpack --config build.js --colors",
+    "test": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=test jest --coverage"
   }
 }
